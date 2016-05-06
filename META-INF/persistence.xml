@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="CargaDatosExcelPU"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>		
+		<class>pe.com.tss.bean.City</class>
+		<class>pe.com.tss.bean.Country</class>
+		<class>pe.com.tss.bean.Customer</class>
+		<class>pe.com.tss.bean.DrayRate</class>
+		<class>pe.com.tss.bean.GeneralTable</class>
+		<class>pe.com.tss.bean.Location</class>
+		<class>pe.com.tss.bean.Market</class>
+		<class>pe.com.tss.bean.Office</class>
+		<class>pe.com.tss.bean.RailRate</class>
+		<class>pe.com.tss.bean.Ramp</class>
+		<class>pe.com.tss.bean.RampArea</class>
+		<class>pe.com.tss.bean.Role</class>
+		<class>pe.com.tss.bean.State</class>
+		<class>pe.com.tss.bean.User</class>
+		<class>pe.com.tss.bean.UserOffice</class>
+		<class>pe.com.tss.bean.UserRole</class>
+		<class>pe.com.tss.bean.Vendor</class>
+		<class>pe.com.tss.bean.Zip</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@celticdb:1521:orcl" />
+			<property name="javax.persistence.jdbc.user" value="tssuser" />
+			<property name="javax.persistence.jdbc.password" value="tssuser" />
+		</properties>
+	</persistence-unit>
+</persistence>
