@@ -24,7 +24,7 @@ public class RoleMain {
 		long tiempoInicio = System.currentTimeMillis();
 
 		try {
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -75,8 +75,7 @@ public class RoleMain {
 				if (rolename.equals("")) {
 					logger.info("Datos principales de la fila " + countRows + " nulos o en blanco");
 				} else {
-					Role role = new Role();
-					role.setRoleid(countRows);
+					Role role = new Role();					
 					role.setRolename(rolename);
 					role.setCreatedby("CELTIC");					
 					role.setCreateddate(new Date());

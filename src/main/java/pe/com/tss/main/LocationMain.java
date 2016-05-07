@@ -34,7 +34,7 @@ public class LocationMain {
 			CityDao cityDao = new CityDao();
 			ZipDao zipDao = new ZipDao();
 
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -57,10 +57,7 @@ public class LocationMain {
 			int indice = 0;
 
 			int countRows = 0;
-			int idCountry=0;
-			int idState=0;
-			int idCity=0;
-			int idZip=0;
+
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
 				// For each row, iterate through all the columns
@@ -119,6 +116,9 @@ public class LocationMain {
 						case Cell.CELL_TYPE_STRING:
 							zipcode = cell.getStringCellValue();
 							break;
+						case Cell.CELL_TYPE_BLANK:
+							zipcode = "";
+							break;
 						}
 						break;
 					default:
@@ -129,7 +129,6 @@ public class LocationMain {
 
 				}
 				countRows++;
-				
 
 				if (country.equals("") || statecode.equals("") || statename.equals("") || city.equals("")) {
 					logger.info("Datos principales de la fila " + countRows + " nulos o en blanco");
@@ -141,8 +140,6 @@ public class LocationMain {
 					Zip zip = new Zip();
 
 					if (countryDao.getCountry(country) == null) {
-						idCountry++;
-						c.setCountryid(idCountry);
 						c.setName("");
 						c.setAbbreviation(country);
 						countryDao.registrar(c);
@@ -152,9 +149,7 @@ public class LocationMain {
 					}
 
 					if (stateDao.getState(statecode) == null) {
-						idState++;
 						state.setCountryId(c.getCountryid());
-						state.setStateId(idState);
 						state.setAbbreviation(statecode);
 						state.setName(statename);
 						stateDao.registrar(state);
@@ -164,8 +159,6 @@ public class LocationMain {
 					}
 
 					if (cityDao.getCity(city) == null) {
-						idCity++;
-						objCity.setCityid(idCity);
 						objCity.setName(city);
 						objCity.setStateid(state.getStateId());
 						cityDao.registrar(objCity);
@@ -175,9 +168,7 @@ public class LocationMain {
 						objCity = cityDao.getCity(city);
 					}
 
-					if (zipDao.getZip(zipcode) == null) {
-						idZip++;
-						zip.setZipid(idZip);
+					if (zipDao.getZip(zipcode) == null && zipcode.length()>0) {
 						zip.setCityid(objCity.getCityid());
 						zip.setZipcode(zipcode);
 						zipDao.registrar(zip);

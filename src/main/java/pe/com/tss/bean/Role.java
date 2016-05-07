@@ -2,6 +2,9 @@ package pe.com.tss.bean;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 import java.util.Date;
 
 /**
@@ -17,8 +20,9 @@ public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Basic(optional = false)
+	//@Basic(optional = false)
 	@Column(name = "ROLE_ID")
+	@ReturnInsert(returnOnly=true)
 	private long roleid;
 
 	@Column(name = "CREATED_BY")

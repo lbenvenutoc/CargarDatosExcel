@@ -25,7 +25,7 @@ public class OfficeMain {
 		long tiempoInicio = System.currentTimeMillis();
 
 		try {
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -118,7 +118,7 @@ public class OfficeMain {
 					office.setCity(city);
 					office.setCreatedby("CELTIC");
 					office.setCreateddate(new Date());
-					office.setOfficeid(countRows);
+					//office.setOfficeid(countRows);
 					office.setOfficename(officename);
 					office.setState(state);
 					office.setStatus("A");

@@ -36,7 +36,7 @@ public class UserMain {
 			OfficeDao officeDao = new OfficeDao();
 			UserDao userDao = new UserDao();
 
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -108,6 +108,9 @@ public class UserMain {
 						case Cell.CELL_TYPE_STRING:
 							title = cell.getStringCellValue();
 							break;
+						case Cell.CELL_TYPE_BLANK:
+							title = "-";
+							break;
 						}
 						break;
 					case 4:
@@ -155,7 +158,7 @@ public class UserMain {
 				} else {
 					User user = new User();
 					//user.setUserid(countRows);
-					user.setManagerid(countRows);
+					user.setManagerid(null);
 					user.setUsername(username);
 					user.setFirtsname(firstname);
 					user.setLastname(lastname);		

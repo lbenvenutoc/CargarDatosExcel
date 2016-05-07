@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 import java.math.BigDecimal;
 
 /**
@@ -19,9 +21,9 @@ import java.math.BigDecimal;
 public class Zip implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Basic(optional = false)
+	@Id	
 	@Column(name = "ZIP_ID")
+	@ReturnInsert(returnOnly=true)
 	private long zipid;
 
 	@Column(name = "CITY_ID")

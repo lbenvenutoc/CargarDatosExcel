@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 import java.math.BigDecimal;
 
 /**
@@ -25,7 +27,7 @@ public class City implements Serializable {
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "CITY_ID")
-	@Basic(optional = false)	
+	@ReturnInsert(returnOnly=true)	
 	private long cityid;
 	
 	@Column(name = "NAME")

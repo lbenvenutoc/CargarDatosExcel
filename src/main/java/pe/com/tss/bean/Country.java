@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 /**
  * The persistent class for the COUNTRY database table.
  * 
@@ -17,9 +19,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Country implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Basic(optional = false)
+	@Id	
 	@Column(name = "COUNTRY_ID")
+	@ReturnInsert(returnOnly=true)
 	private long countryid;
 
 	@Column(name = "ABB_REVIATION")

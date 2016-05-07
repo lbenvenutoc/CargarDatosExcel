@@ -45,7 +45,7 @@ public class DrayRateMain {
 
 		try {
 
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData_2.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);

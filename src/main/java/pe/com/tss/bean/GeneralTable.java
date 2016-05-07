@@ -12,6 +12,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 @Entity
 @Table(name="GENERAL_TABLE")
 @NamedQueries({
@@ -28,9 +30,8 @@ public class GeneralTable implements Serializable{
 	private static final long serialVersionUID = 1094420543319274738L;
 	
 	@Id
-	@Basic(optional = false)
-	//@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "GENERAL_TABLE_ID")	
+	@ReturnInsert(returnOnly=true)
 	private long generaltableid;
 	
 	@Column(name = "TABLE_NAME")	

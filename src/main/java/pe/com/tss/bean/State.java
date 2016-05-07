@@ -12,6 +12,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 @Entity
 @Table(name = "STATE")
 @XmlRootElement
@@ -23,9 +25,9 @@ public class State implements Serializable {
 	
 	private static final long serialVersionUID = -2809815705102074186L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id	
 	@Column(name = "STATE_ID")
+	@ReturnInsert(returnOnly=true)
 	private long stateId;
 
 	@Column(name = "NAME", nullable = false)

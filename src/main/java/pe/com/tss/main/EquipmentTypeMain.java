@@ -26,7 +26,7 @@ public class EquipmentTypeMain {
 
 		try {
 
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -45,7 +45,7 @@ public class EquipmentTypeMain {
 			int indice = 0;
 
 			int countRows = 0;
-			int idTable = 0;
+			int idSort = 0;
 
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
@@ -83,11 +83,10 @@ public class EquipmentTypeMain {
 					GeneralTable tabla = new GeneralTable();
 					
 					if (generalTableDao.existGeneralTable(equipmenttype) == false) {						
-						idTable=generalTableDao.getAll()+1;
-						tabla.setGeneraltableid(idTable);
+						idSort++;
 						tabla.setCode(equipmenttype);
 						tabla.setValue(equipmenttype);
-						tabla.setSortorder(idTable);
+						tabla.setSortorder(idSort);
 						tabla.setTablename("EquipmentType");
 						tabla.setStatus("A");
 						generalTableDao.registrar(tabla);

@@ -1,9 +1,10 @@
 package pe.com.tss.bean;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
 import javax.persistence.*;
+
+import org.eclipse.persistence.annotations.ReturnInsert;
+
 import java.util.Date;
 
 /**
@@ -24,7 +25,8 @@ public class Office implements Serializable {
 
 	@Id
 	@Column(name = "OFFICE_ID")
-	@Basic(optional = false)
+	//@Basic(optional = false)
+	@ReturnInsert(returnOnly=true)
 	private long officeid;
 
 	@Column(name = "CITY")

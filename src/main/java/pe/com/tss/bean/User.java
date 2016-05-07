@@ -1,6 +1,7 @@
 package pe.com.tss.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -13,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.eclipse.persistence.annotations.ReturnInsert;
 
 @Entity
 @Table(name = "USERS")
@@ -29,12 +32,13 @@ public class User implements Serializable {
 	private static final long serialVersionUID = -4532144724295801515L;
 
 	@Id
-	@Basic(optional = false)
+	//@Basic(optional = false)
 	@Column(name = "USER_ID")
+	@ReturnInsert(returnOnly=true)
 	private long userid;
 
 	@Column(name = "MANAGER_ID")
-	private long managerid;
+	private BigDecimal managerid=null;
 
 	@Column(name = "USER_NAME")
 	private String username;
@@ -76,11 +80,11 @@ public class User implements Serializable {
 		this.userid = userid;
 	}
 
-	public long getManagerid() {
+	public BigDecimal getManagerid() {
 		return managerid;
 	}
 
-	public void setManagerid(long managerid) {
+	public void setManagerid(BigDecimal managerid) {
 		this.managerid = managerid;
 	}
 

@@ -33,7 +33,7 @@ public class RampMain {
 			MarketDao marketDao = new MarketDao();
 			RampAreaDao rampAreaDao = new RampAreaDao();
 
-			FileInputStream file = new FileInputStream(new File("D:\\MasterData.xlsx"));
+			FileInputStream file = new FileInputStream(new File("E:\\MasterData.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
