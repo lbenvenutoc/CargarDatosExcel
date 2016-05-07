@@ -183,10 +183,10 @@ public class RampMain {
 						ramparea.setCountry(country);
 						ramparea.setState(state);
 						ramparea.setName(rampareaname);
-						ramparea.setStatus("0");
-						ramparea.setCreatedBy("BATCH");
+						ramparea.setStatus("A");
+						ramparea.setCreatedBy("CELTIC");
 						ramparea.setCreatedDate(new Date());
-						ramparea.setUpdatedBy("BATCH");
+						ramparea.setUpdatedBy("CELTIC");
 						ramparea.setUpdatedDate(new Date());
 						rampAreaDao.registrar(ramparea);
 						logger.info("Se registraron los datos " + ramparea.toString());
@@ -220,10 +220,10 @@ public class RampMain {
 							zip = "-";
 						}
 						ramp.setZipCode(zip);
-						ramp.setStatus("0");
-						ramp.setCreatedBy("BATCH");
+						ramp.setStatus("A");
+						ramp.setCreatedBy("CELTIC");
 						ramp.setCreatedDate(new Date());
-						ramp.setUpdatedBy("BATCH");
+						ramp.setUpdatedBy("CELTIC");
 						ramp.setUpdatedDate(new Date());
 						rampDao.registrar(ramp);
 						logger.info("Se registraron los datos " + ramp.toString());

@@ -154,7 +154,7 @@ public class UserMain {
 					logger.info("Datos principales de la fila " + countRows + " nulos o en blanco");
 				} else {
 					User user = new User();
-					user.setUserid(countRows);
+					//user.setUserid(countRows);
 					user.setManagerid(countRows);
 					user.setUsername(username);
 					user.setFirtsname(firstname);

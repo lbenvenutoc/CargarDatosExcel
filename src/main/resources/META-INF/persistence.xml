@@ -9,6 +9,7 @@
 		<class>pe.com.tss.bean.Country</class>
 		<class>pe.com.tss.bean.Customer</class>
 		<class>pe.com.tss.bean.DrayRate</class>
+		<class>pe.com.tss.bean.GeneralTable</class>
 		<class>pe.com.tss.bean.Location</class>
 		<class>pe.com.tss.bean.Market</class>
 		<class>pe.com.tss.bean.Office</class>
@@ -22,14 +23,19 @@
 		<class>pe.com.tss.bean.UserRole</class>
 		<class>pe.com.tss.bean.Vendor</class>
 		<class>pe.com.tss.bean.Zip</class>
-		<class>pe.com.tss.bean.GeneralTable</class>
-		<class>pe.com.tss.bean.DrayRate</class>
-		<class>pe.com.tss.bean.RailRate</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@celticdb:1521:orcl" />
+		
+		<!-- 
+		<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@celticdb:1521:orcl" />
 			<property name="javax.persistence.jdbc.user" value="tssuser" />
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
 			<property name="javax.persistence.jdbc.password" value="tssuser" />			
+		 -->
+		 	<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			<property name="javax.persistence.jdbc.user" value="system" />
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.password" value="oracle12" />			
+			
 		</properties>
 	</persistence-unit>
 </persistence>
