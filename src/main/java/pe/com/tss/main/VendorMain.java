@@ -106,8 +106,7 @@ public class VendorMain {
 					Vendor vendor = new Vendor();
 					
 					if (vendorDao.exitsVendor(code, name, vendortype) == false) {						
-						//idVendor++;
-						//vendor.setVendorid(idVendor);
+						
 						vendor.setName(name);
 						vendor.setCode(code);
 						vendor.setVendortype(vendortype);
